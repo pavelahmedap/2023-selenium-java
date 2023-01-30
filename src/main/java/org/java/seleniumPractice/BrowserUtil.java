@@ -61,6 +61,46 @@ public class BrowserUtil {
 		}
 		driver.get(url);
 	}
+	
+	/**
+	 * This method is responsible to enter the URL
+	 * 
+	 * @param url
+	 */
+	public void navigateTo(String url) {
+		if (url == null) {
+			System.out.println("URL is null...");
+			return;
+		} else if (url.indexOf("http") == -1) {
+			System.out.println("Http is missing in the URL....");
+			return;
+		}
+		driver.navigate().to(url);
+	}
+	
+	/**
+	 * This method is responsible for navigate back to previous page/URL
+	 * 
+	 */
+	public void navigateBack() {
+		driver.navigate().back();;
+	}
+	
+	/**
+	 * This method is responsible for forward back to page
+	 * 
+	 */
+	public void navigateForward() {
+		driver.navigate().forward();;
+	}
+	
+	/**
+	 * This method is responsible for refreshing the page
+	 * 
+	 */
+	public void navigateRefresh() {
+		driver.navigate().refresh();;
+	}
 
 	/**
 	 * This method is responsible for getting title of the current page
